@@ -1,0 +1,10 @@
+insert into HERO (NAME) values ('Mr. Nice');
+insert into HERO (NAME) values ('Narco');
+insert into HERO (NAME) values ('Bombasto');
+insert into HERO (NAME) values ('Celeritas');
+insert into HERO (NAME) values ('Magneta');
+insert into HERO (NAME) values ('RubberMan');
+insert into HERO (NAME) values ('Dynama');
+insert into HERO (NAME) values ('Dr IQ');
+insert into HERO (NAME) values ('Magma');
+insert into HERO (NAME) values ('Tornado');
