@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="subjectService" class="es.springstudy.services.SubjectService" factory-method="createSubjectServiceInstance">
+		<constructor-arg value="6"/>
+	</bean>	
+	
+	<bean id="factoryService" class="es.springstudy.services.FactoryService"></bean>
+	
+	<bean id="subjectService1" factory-bean="factoryService" factory-method="createSubjectServiceInstance"></bean>
+		
+</beans>
