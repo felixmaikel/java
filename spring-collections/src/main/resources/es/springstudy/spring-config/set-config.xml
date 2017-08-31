@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="person1" class="es.springstudy.models.Person">
+		<property name="nif" value="51111111J"/>
+		<property name="name" value="Jose Garcia"/>
+		<property name="years" value="30"/>
+		<property name="emails">
+			<props>
+				<prop key="information">information@gmail.com</prop>
+				<prop key="incidents">incidents@gmail.com</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="teacher1" parent="person1" class="es.springstudy.models.Teacher">
+		<property name="subject" ref="subjectMath"/>
+		<property name="emails">
+			<props merge="true">
+				<prop key="customer">customer@gmail.com</prop>
+				<prop key="incidents">incidents@yahoo.com</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="teacher2" class="es.springstudy.models.Teacher">
+		<property name="nif" value="52222222J"/>
+		<property name="name" value="Carmen Garcia"/>
+		<property name="years" value="25"/>
+		<property name="subject">
+			<ref bean="subjectHistory"/>
+		</property>
+	</bean>
+	
+	<bean id="teacher3" class="es.springstudy.models.Teacher">
+		<property name="nif" value="5333333J"/>
+		<property name="name" value="Juana Garcia"/>
+		<property name="years" value="35"/>
+		<property name="subject">
+			<bean class="es.springstudy.models.Subject">
+				<constructor-arg value="5"/>
+				<constructor-arg value="Art"/>
+				<constructor-arg value="Subject Art"/>
+			</bean>
+		</property>
+	</bean>
+		
+</beans>

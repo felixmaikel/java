@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		<bean id="subjectMath" class="es.springstudy.models.Subject">
+			<constructor-arg value="1"/>
+			<constructor-arg value="Mathematic"/>
+			<constructor-arg value="Subject mathematic"/>
+		</bean>
+		
+		<bean id="subjectHistory" class="es.springstudy.models.Subject">
+			<constructor-arg type="int" value="2"/>
+			<constructor-arg type="java.lang.String" value="History"/>
+			<constructor-arg type="java.lang.String" value="Subject History"/>
+		</bean>
+		
+		<bean id="subjectPhisical" class="es.springstudy.models.Subject">
+			<constructor-arg index="0" value="3"/>
+			<constructor-arg index="1" value="Phisical"/>
+			<constructor-arg index="2" value="Subject Phisical"/>
+		</bean>
+		
+		<bean id="subjectQuimical" class="es.springstudy.models.Subject">
+			<constructor-arg name="subjectId" value="4"/>
+			<constructor-arg name="subjectName" value="Quimical"/>
+			<constructor-arg name="description" value="Subject Quimical"/>
+		</bean>
+		
+		<bean id="laboratoryPhisical" class="es.springstudy.models.Laboratory">
+			<constructor-arg name="laboratoryNumber" value="1"/>
+			<constructor-arg ref="subjectPhisical"/>
+		</bean>
+		
+</beans>
